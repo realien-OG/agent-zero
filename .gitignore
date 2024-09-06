@@ -6,6 +6,9 @@
 # Ignore all contents of the virtual environment directory
 .venv/*
 
+#my venv folddr
+./agent-zero
+
 # Ignore all contents of the directory "work_dir"
 work_dir/*
 # But do not ignore the directory itself
