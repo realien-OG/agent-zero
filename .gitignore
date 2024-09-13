@@ -34,3 +34,4 @@ knowledge/*
 # But do not ignore the directory itself
 !knowledge/.gitkeepagent-zero/
 agent-zero/lib/python3.12/site-packages/torch/lib/libtorch_cpu.dylib
+agent-zero/
