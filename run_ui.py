@@ -12,6 +12,8 @@ from python.helpers.files import get_abs_path
 from python.helpers.print_style import PrintStyle
 from python.helpers.log import Log
 from dotenv import load_dotenv
+import argparse
+
 
 
 #initialize the internal Flask server
@@ -245,8 +247,11 @@ async def poll():
 
 #run the internal server
 if __name__ == "__main__":
-
     load_dotenv()
+
+    parser = argparse.ArgumentParser(description="Run Agent Zero UI")
+    parser.add_argument('-port', type=int, default=8000, help='Port number to run the server on')
+    args = parser.parse_args()
     
     # Suppress only request logs but keep the startup messages
     from werkzeug.serving import WSGIRequestHandler
@@ -254,6 +259,6 @@ if __name__ == "__main__":
         def log_request(self, code='-', size='-'):
             pass  # Override to suppress request logging
 
-    # run the server on port from .env
-    port = int(os.environ.get("WEB_UI_PORT", 0)) or None
+    # Use command-line argument if provided, otherwise use environment variable
+    port = args.port or int(os.environ.get("WEB_UI_PORT", 0)) or None
     app.run(request_handler=NoRequestLoggingWSGIRequestHandler, port=port, debug=True)

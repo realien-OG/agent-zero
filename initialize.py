@@ -33,7 +33,7 @@ def initialize():
         # knowledge_subdir: str = ""
         auto_memory_count = 0,
         # auto_memory_skip = 2,
-        rate_limit_seconds = 60,
+        rate_limit_seconds = 30,
         rate_limit_requests = 15,
         # rate_limit_input_tokens = 0,
         # rate_limit_output_tokens = 0,
