@@ -4,10 +4,14 @@ from agent import AgentConfig
 def initialize():
     
     # main chat model used by agents (smarter, more accurate)
-    chat_llm = models.get_openai_chat(model_name="gpt-4o", temperature=0)
+    #chat_llm = models.get_openai_chat(model_name="gpt-4o", temperature=0)
     # chat_llm = models.get_ollama_chat(model_name="gemma2:latest", temperature=0)
     # chat_llm = models.get_lmstudio_chat(model_name="TheBloke/Mistral-7B-Instruct-v0.2-GGUF", temperature=0)
-    # chat_llm = models.get_openrouter(model_name="meta-llama/llama-3-8b-instruct:free")
+    
+    #chat_llm = models.get_openrouter(model_name="meta-llama/llama-3-8b-instruct:free")
+    chat_llm = models.get_openrouter_chat(model_name="openai/o1-preview-2024-09-12")
+    
+    
     #chat_llm = models.get_azure_openai_chat(deployment_name="prft-product-dev-ideation-agent-po", temperature=0)
 
   
